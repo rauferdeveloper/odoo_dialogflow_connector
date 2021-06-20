@@ -27,7 +27,7 @@ class Meeting(models.Model):
                         datetime_event = param
                     elif key == 'time':
                         time = param
-        # Crear evento
+        # Create event
         if datetime_event:
             datetime_event = datetime_event[:10] +' ' + datetime_event[11:19]
             datetime_event = datetime.strptime(datetime_event, DEFAULT_SERVER_DATETIME_FORMAT) 
