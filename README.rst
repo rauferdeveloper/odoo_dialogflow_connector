@@ -8,10 +8,9 @@ Description
 
 This module connect dialogflow with odoo and create events and opportunities
 
-Install
+Requirements
 =======
-Requirements pyTelegramBotAPI
-* `pyTelegramBotAPI <https://github.com/eternnoir/pyTelegramBotAPI/>`
+* `pyTelegramBotAPI <https://github.com/eternnoir/pyTelegramBotAPI/>`_.
 
 
 Configuration
