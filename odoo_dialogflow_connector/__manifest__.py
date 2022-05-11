@@ -8,6 +8,7 @@
         This module connect dialogflow with odoo and create events and opportunities
     """,
     "category": "Tools",
+    'version': '14.0.0.1',
     "website": "https://github.com/rauferdeveloper",
     "author": "Raúl Fernández",
     "license": "LGPL-3",
