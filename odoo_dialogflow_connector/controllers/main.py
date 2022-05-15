@@ -30,6 +30,7 @@ class MainApi(http.Controller):
         output_contexts = request.jsonrequest['queryResult']['outputContexts']
         parameters = request.jsonrequest['queryResult']['parameters']
         email = parameters.get('email')
+        traervento = parameters.get('traerevento')
         if app_message.get('source') in ['telegram']:
             user_telegram_id = str(int(app_message['payload']['data']['from']['id']))
             user_telegram_name = app_message['payload']['data']['from']['username']
@@ -39,7 +40,10 @@ class MainApi(http.Controller):
                 ('user_ids', '!=', False)
             ])
             if search_partner:
-                calendar_event_obj.create_event_dialogflow(output_contexts, parameters, search_partner, valueRequest)
+                if traervento:
+                    calendar_event_obj.get_event_dialogflow(output_contexts, parameters, search_partner, valueRequest)
+                else:
+                    calendar_event_obj.create_event_dialogflow(output_contexts, parameters, search_partner, valueRequest)
             else:
                 if email:
                     search_partner = res_partner_obj.search([
